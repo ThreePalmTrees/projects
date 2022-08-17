@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate Download Time</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <form action="" class="form">
+        <h3 class="form-heading">Fill in download details:</h3>
+        <div class="input-wrapper">
+          <label for="size">Download Size (MB)</label>
+          <input
+            type="text"
+            name="size"
+            id="size"
+            placeholder="Eg: 100000 or 100gb"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="speed">Download Speed (Mbps)</label>
+          <input type="text" name="speed" id="speed" placeholder="Eg: 5" />
+        </div>
+        <button class="calculate-button">Calculate Download Time</button>
+      </form>
+      <div class="result">
+        <h3 class="result-heading">Your download will finish in:</h3>
+        <p class="readable-time"></p>
+        <br />
+        <div class="result-times">
+          <span class="result-in-hours"
+            ><b><span class="purple-text"></span></b> Hours,</span
+          >
+          <span><b>OR</b></span>
+          <span class="result-in-minutes"
+            ><b><span class="purple-text"></span></b> Minutes.</span
+          >
+          <br />
+          <br />
+          <p>
+            You can download
+            <b><span class="mb-per-minute purple-text"></span></b> per minute,
+            and <b><span class="mb-per-hour purple-text"></span></b> per hour.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>

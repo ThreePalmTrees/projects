@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* My name font */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+a,
+a:visited {
+  color: #1e76c3;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 16px 0;
+  width: 64ch;
+}
+
+.header {
+  font-size: 14px;
+}
+.phone-number {
+  color: rgb(77, 77, 77);
+}
+.linkedin-wrapper,
+.my-name {
+  margin-bottom: 20px;
+}
+.my-name {
+  font-family: "Spartan", sans-serif;
+  font-size: 25px;
+  letter-spacing: -1.5px;
+  word-spacing: 1.5px;
+  margin-bottom: 27px;
+}
+
+.horizontal-divider {
+  border: 2px solid #000;
+}
+
+.content {
+  margin-top: 32px;
+}
+
+.label {
+  background: #3170d2;
+  background: #2292bf;
+  background: #227cbf;
+  color: #fff;
+  -webkit-print-color-adjust: exact;
+  width: fit-content;
+  padding: 1px 7px;
+  margin-top: 24px;
+  margin-bottom: 0px;
+  border-top-right-radius: 10px;
+  letter-spacing: 1.2px;
+}
+
+.skills-label,
+.languages-label {
+  margin-bottom: 12px;
+}
+
+.company-wrapper,
+.school-wrapper {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.company-name .school-name {
+  font: serif;
+}
+
+.location-date {
+  color: rgb(131, 131, 131);
+  font-weight: 500;
+}
+.position,
+.undergraduate-label {
+  font-weight: 600;
+  color: rgb(65, 65, 65);
+}
+.undergraduate-label {
+  color: rgb(116, 116, 116);
+  font-size: 14px;
+}
+
+.company-description,
+.school-description,
+.languages-wrapper {
+  color: rgb(70 70 70);
+  margin-top: 8px;
+}
+.company-contributions {
+  line-height: 1.6;
+}
+
+.dazn-bullet-points {
+  margin: 10px;
+}
+
+.arrows-wrapper {
+  display: inline-block;
+}
+.arrows-wrapper > span:nth-child(2) {
+  margin-left: -5px;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+}
+.company-logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.fw5 {
+  font-weight: 500;
+}
+
+.fw6 {
+  font-weight: 600;
+}

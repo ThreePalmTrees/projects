@@ -1,0 +1,217 @@
+@keyframes left-to-right-stripes {
+  0% {
+    transform: translate3d(-100%, 0, 0) scaleX(1);
+  }
+  20% {
+    transform: translate3d(-100%, 0, 0) scaleX(1);
+  }
+  50% {
+    transform: translate3d(-10%, 0, 0) scaleX(1);
+  }
+  70% {
+    transform: translate3d(-50%, 0, 0) scaleX(2);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0) scaleX(1);
+  }
+}
+
+@keyframes left-to-right-yellow-indicator {
+  0% {
+    transform: translate3d(0, 0, 0) scaleX(0);
+  }
+  35% {
+    transform: translate3d(5%, 0, 0) scaleX(1);
+  }
+  45% {
+    transform: translate3d(100%, 0, 0) scaleX(2);
+  }
+  60% {
+    transform: translate3d(100%, 0, 0) scaleX(1.5);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0) scaleX(1);
+  }
+}
+
+@keyframes slide-in-logo-part {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10%, 0, 0);
+  }
+  79% {
+    opacity: 0;
+    transform: translate3d(-5%, 0, 0);
+  }
+  80% {
+    opacity: 1;
+    transform: translate3d(-5%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-0%, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #070d10;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.buttons-wrapper {
+  z-index: 1;
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.again-button {
+  padding: 8px 32px;
+  font-size: 20px;
+  font-family: monospace;
+  border: 0;
+  border-radius: 3px;
+  background: linear-gradient(45deg, #b1b718, #f6ff00, #b0b610);
+  color: #000;
+  display: none;
+  opacity: 0;
+}
+
+/* Main wrapper */
+.bootstrap-splash_yellow-line {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #070d10;
+  position: relative;
+}
+
+/* Gray stripes (first loaded animation) */
+.bootstrap-splash_stripes-wrapper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.bootstrap-splash_stripe-1,
+.bootstrap-splash_stripe-2,
+.bootstrap-splash_stripe-3,
+.bootstrap-splash_stripe-4 {
+  background: #202730;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 25%;
+  transform-origin: 0 0 0;
+  transform: translateX(-100%);
+  position: absolute;
+  animation: left-to-right-stripes 1s cubic-bezier(0.1, 0.85, 0.25, 1) 1;
+  animation-delay: 1s;
+}
+.bootstrap-splash_stripe-1 {
+  animation-duration: 1s;
+  top: 0;
+}
+.bootstrap-splash_stripe-2 {
+  animation-duration: 0.9s;
+  top: 25%;
+}
+.bootstrap-splash_stripe-3 {
+  animation-duration: 1.1s;
+  top: calc(50% - 1px);
+}
+.bootstrap-splash_stripe-4 {
+  animation-duration: 0.8s;
+  top: calc(75% - 1px);
+}
+
+/* Logo wrapper & parts */
+.bootstrap-splash_logo-section {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0 0;
+  backface-visibility: hidden;
+  transform: translate3d(-50%, -50%, 0);
+  width: 100%;
+  height: 50%;
+}
+
+.bootstrap-splash_logo-wrapper {
+  height: 50%;
+  width: 50%;
+  min-width: 150px;
+  max-width: 200px;
+  margin: 75px auto 0 auto;
+}
+
+.bootstrap-splash_logo {
+  fill: #fff;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0 0;
+}
+
+.bootstrap-splash_logo-part {
+  max-width: 50%;
+  min-width: 215px;
+  margin: 0 auto;
+  opacity: 0;
+  transform-origin: 0 0 0;
+  backface-visibility: hidden;
+}
+.bootstrap-splash_logo-part--frame {
+  animation: slide-in-logo-part 1.2s 0.9s both;
+}
+.bootstrap-splash_logo-part--D {
+  animation: slide-in-logo-part 1.23s 0.9s both;
+}
+.bootstrap-splash_logo-part--A {
+  animation: slide-in-logo-part 1.26s 0.9s both;
+}
+.bootstrap-splash_logo-part--Z {
+  animation: slide-in-logo-part 1.29s 0.9s both;
+}
+.bootstrap-splash_logo-part--N {
+  animation: slide-in-logo-part 1.32s 0.9s both;
+}
+
+/* Yellow line under the logo */
+.bootstrap-splash_yellow-line-indicator-wrapper {
+  height: 100%;
+  width: 70%;
+  min-width: 205px;
+  max-width: 300px;
+  margin: 75px auto 0 auto;
+  position: relative;
+  overflow: hidden;
+  left: -1%;
+}
+
+.bootstrap-splash_yellow-line-indicator {
+  fill: #f8fc00;
+  transform-origin: 0 0 0;
+  backface-visibility: hidden;
+  animation: left-to-right-yellow-indicator 2.1s
+    cubic-bezier(0.54, 0.04, 0.74, 0.97) infinite both;
+  animation-delay: 2s;
+}
