@@ -84,7 +84,7 @@ function showErrorMessage() {
 function showSuccessMessage() {
   showStatusElement({
     duration: 3000,
-    textContent: "✅  Gamepad connected.",
+    textContent: "✅ Gamepad connected.",
     isError: false,
   });
 }
@@ -107,10 +107,10 @@ function vibrate(
   });
 }
 
-// Runs `vibrate` in loop, the `seconds` are the initial duration (3 seconds) + the provided seconds
+// Runs `vibrate` in loop. the duration are the initial duration (3 seconds) + the provided seconds
 /** example: `vibrateLoop(9, config)` will run for 3 + 9 seconds given that `config.duration` is 3000. */
 function vibrateLoop(seconds, intencityConfig) {
-  /** `vibrationActuator` only allows `duration` of 3 seconds.
+  /** `vibrationActuator` allows a max `duration` of 3 seconds.
    * As a workaround, we can create a loop that calls the `vibrate` function every 3 seconds.
    * We have to account for a varying delay as well or we'll trigger all calls at the same time.
    */
@@ -161,6 +161,9 @@ function main() {
   stopButton.addEventListener("click", () => {
     clearTimeouts(vibrateTimeouts);
 
+    /** clearing `vibrateTimeouts` will stop the vibration after the cycle finishes (defined by `duration`)
+     * In order to stop immediately, we need send a new command with `duration: 0`
+     */
     vibrate(connectedPad, vibrateIntencities.stop);
   });
 }
